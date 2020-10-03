@@ -1,0 +1,12 @@
+create database jafrul;
+use jafrul;
+
+drop table products;
+create table products(id int NOT NULL AUTO_INCREMENT primary key, name varchar(50),price int,quantity int);
+
+create table sell(
+id int NOT NULL AUTO_INCREMENT primary key,
+product_id int,
+quantity int,
+total_price int,
+FOREIGN KEY (product_id) REFERENCES products(id));
